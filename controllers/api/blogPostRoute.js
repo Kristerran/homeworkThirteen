@@ -1,10 +1,21 @@
 const router = require("express").Router();
 const { Blog_post } = require("../../models");
 
+router.get("/", async (req, res) => {
+  try {
+    const postData = await Blog_post.findAll();
+    res.status(200).json(postData)
+  } catch (err) {
+    console.log(err);
+    res.json(err)
+  }
+})
 
 router.post("/", async (req, res) => {
   try {
-    const blogPost = await Blog_post.create(req.body);
+    const blogPost = await Blog_post.create({
+      ...req.body,
+    user_id: req.session.user_id});
     console.log(blogPost);
     res.redirect("/");
   } catch (err) {
