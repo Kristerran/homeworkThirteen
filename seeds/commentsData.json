@@ -1,0 +1,32 @@
+[
+    {
+        "content": "This is really cool!",
+        "user_id": 1,
+        "post_id": 1
+      },
+      {
+        "content": "Wow I never knew this tech fact! ",
+        "user_id": 2,
+        "post_id": 1
+      },
+      {
+        "content": "I hate this post",
+        "user_id": 3,
+        "post_id": 1
+      },
+      {
+        "content": "FIRST!!",
+        "user_id": 4,
+        "post_id": 2
+      },
+      {
+        "content": "Absolutely",
+        "user_id": 3,
+        "post_id": 2
+      },
+      {
+        "content": "Word bro",
+        "user_id": 2,
+        "post_id": 2
+      }
+  ]

@@ -1,14 +1,14 @@
 const router = require('express').Router();
-const { User, Blog_post } = require('../models');
+const { User, Blog_post, Comments } = require('../models');
 
 router.get('/', async (req, res) => {
    try {
      // Get all blogPost, sorted by name
-     const blogData = await Blog_post.findAll(
-     );
+     const blogData = await Blog_post.findAll({
+       include: Comments
+     });
      const blogPost = blogData.map((project) => project.get({ plain: true }));
-       res.render('homepage', {blogPost,
-      logged_in: req.session.logged_in});
+       res.render('homepage', {blogPost, logged_in:req.session.logged_in});
   } catch (err) {
     res.status(500).json(err);
   }

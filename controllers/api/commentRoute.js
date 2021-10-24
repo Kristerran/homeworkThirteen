@@ -1,13 +1,17 @@
 //CHANGE ME
 
 const router = require("express").Router();
-const { Blog_post } = require("../../models");
+const { Comments } = require("../../models");
 
 
-router.post("/", async (req, res) => {
+router.post("/:id", async (req, res) => {
   try {
-    const blogPost = await Blog_post.create(req.body);
-    console.log(blogPost);
+    console.log(req.body)
+    const comment = await Comments.create({
+      ...req.body,
+      post_id: req.params.id,
+      user_id: req.session.user_id });
+    console.log(comment);
     res.redirect("/");
   } catch (err) {
     console.log(err);
@@ -16,7 +20,7 @@ router.post("/", async (req, res) => {
 
 router.delete('/:id', async (req, res) => {
     try {
-      const blogPost = await Blog_post.destroy({
+      const comment = await Comments.destroy({
         where: {
           id: req.params.id,
           user_id: req.session.user_id,
