@@ -1,0 +1,40 @@
+<h1 class='text-center'>
+    Homepage
+</h1>
+
+
+{{#each blogPost}}
+<div class="card mx-auto mt-1 p-3 border" style="width: 50rem;">
+    <h2>
+        {{this.title}}
+    </h2>
+    <p>
+        {{this.content}}
+    </p>
+
+
+        <h4>Comments</h4>
+
+
+        {{#each this.Comments}}
+    <div>
+        <p>
+            {{this.content}}
+        </p>
+    </div>
+            {{/each}}
+
+
+    <div class='border p-2'>
+        <form action="/api/comment/{{this.id}}" method="post">
+                <h4>Submit A Comment</h4>
+                <input name="content" id="content{{this.id}}" type="text" />
+                <input type="submit" value"Submit Comment">
+        </form>
+    </div>
+
+
+
+
+</div>
+    {{/each}}

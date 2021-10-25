@@ -1,5 +1,5 @@
 # Tech Blog
-![Screenshot](https://photos.google.com/photo/AF1QipOVcx3e1oOwdQ-zjY8FbdJMh5Ebu--aFuVt7ORL)
+![Screenshot](./public/screenshot/ProjectScreenshot.png)
 ## Link to deployed project:
 LINK HERE
 ## Description

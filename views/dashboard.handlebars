@@ -1,0 +1,24 @@
+<h1 class="text-center">
+    Dashboard
+</h1>
+<form class="col text-center mx-2" action="/Post" method="get">
+<button class="btn btn-primary mx-auto" action="submit">Post to your blog!</button>
+</form>
+{{#each blogPost}}
+<div class="card mx-auto mt-1 p-3 border" style="width: 50rem;">
+    <h2>
+        {{this.title}}
+    </h2>
+    <p>
+        {{this.content}}
+    </p>
+    <div>
+        <h4>Comments</h4>
+    {{#each this.Comments}}
+    <p>
+        {{this.content}}
+    </p>
+    {{/each}}
+    </div>
+    {{/each}}
+    </div>
